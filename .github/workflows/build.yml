@@ -4,11 +4,15 @@ on:
     branches:
       - main
     tags:
-      - 'v*' # This triggers the release when you push a tag like v1.0.0
+      - 'v*'
+
+# This fixes the Node 20/24 warning and VS2026 redirection
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
 
 jobs:
   release:
-    runs-on: windows-latest
+    runs-on: windows-latest # Sticking to latest stable
 
     steps:
       - name: Check out Git repository
@@ -17,7 +21,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # Using the latest stable Node version
+          node-version: 22 # Use Node 22 (Current Stable)
 
       - name: Install Dependencies
         run: npm install
@@ -27,14 +31,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # Updated to v4 to fix the error
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Launcher-Exe-Package
+          name: Launcher-Exe
           path: dist/*.exe
 
-      # This creates the "Releases" page on GitHub automatically
       - name: Create Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
