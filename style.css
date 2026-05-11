@@ -1,0 +1,38 @@
+body {
+    background: #0B0E14; color: white;
+    font-family: 'Segoe UI', sans-serif; display: flex; margin: 0; height: 100vh;
+}
+.sidebar {
+    width: 200px; background: #080A0F; padding: 20px; display: flex; flex-direction: column;
+}
+.logo { color: #00FFEE; font-size: 22px; margin-bottom: 40px; text-align: center; }
+
+button {
+    background: transparent; border: none; color: #ADBAE1;
+    padding: 15px; text-align: left; cursor: pointer; font-weight: bold;
+}
+button:hover { background: #1C2532; color: #00FFEE; }
+
+.content { flex: 1; padding: 30px; overflow-y: auto; }
+
+.hero {
+    background: #1C2532; padding: 30px; border-radius: 10px;
+    border: 2px solid #3D4455; margin-bottom: 20px;
+}
+.progress-bg { background: #0D1117; height: 12px; border-radius: 6px; margin: 20px 0; }
+#progress-bar { background: #50EF39; width: 0%; height: 100%; border-radius: 6px; transition: 0.3s; }
+
+.play-btn {
+    background: #00FFEE; color: black; border-radius: 5px;
+    padding: 15px 40px; font-size: 16px; width: 200px; text-align: center;
+}
+
+#log-box {
+    width: 100%; height: 200px; background: #05070A; border: 1px solid #1A1D23;
+    color: #50EF39; font-family: monospace; resize: none; outline: none; padding: 10px;
+}
+
+.news-card {
+    background: #1C2532; border-left: 5px solid #00FFEE;
+    padding: 15px; margin-bottom: 15px; border-radius: 0 5px 5px 0;
+}
