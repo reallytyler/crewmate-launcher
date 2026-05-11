@@ -1,24 +1,23 @@
 {
   "name": "among-us-launcher",
   "version": "1.0.0",
+  "description": "Portable Among Us Launcher",
+  "author": "YourName",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "build": "electron-builder"
   },
   "build": {
-    "appId": "com.yourname.amongus",
+    "appId": "com.amongus.launcher",
     "win": {
       "target": "portable",
       "icon": "icon.png"
-    },
-    "directories": {
-      "output": "dist"
     }
   },
   "devDependencies": {
-    "electron": "^28.0.0",
-    "electron-builder": "^24.9.1"
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
   },
   "dependencies": {
     "adm-zip": "^0.5.10",
