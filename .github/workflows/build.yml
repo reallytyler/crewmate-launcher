@@ -6,13 +6,9 @@ on:
     tags:
       - 'v*'
 
-# This fixes the Node 20/24 warning and VS2026 redirection
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
-
 jobs:
   release:
-    runs-on: windows-latest # Sticking to latest stable
+    runs-on: windows-latest
 
     steps:
       - name: Check out Git repository
@@ -21,7 +17,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22 # Use Node 22 (Current Stable)
+          node-version: 20
 
       - name: Install Dependencies
         run: npm install
