@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Among Us Launcher</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h1 class="logo">AMONG US</h1>
+        <button onclick="showTab('home')">🏠 HOME</button>
+        <button onclick="showTab('news')">📢 NEWS</button>
+        <button onclick="openFolder()">📂 FOLDER</button>
+        <div class="version">v3.0.0</div>
+    </div>
+
+    <div class="content">
+        <!-- Home Tab -->
+        <div id="home" class="tab">
+            <div class="hero">
+                <h2 id="status-text">SYSTEM: OFFLINE</h2>
+                <div class="progress-bg"><div id="progress-bar"></div></div>
+                <button id="action-btn" class="play-btn" onclick="handleAction()">INSTALL</button>
+            </div>
+            <h3>> TASK LOG</h3>
+            <textarea id="log-box" readonly placeholder="Waiting for instructions..."></textarea>
+        </div>
+
+        <!-- News Tab -->
+        <div id="news" class="tab" style="display:none;">
+            <div id="news-container">Loading transmissions...</div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
